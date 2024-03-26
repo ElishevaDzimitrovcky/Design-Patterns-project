@@ -7,5 +7,15 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Branch.cs" />
+    <Compile Remove="Disk.cs" />
+    <Compile Remove="Folder.cs" />
+    <Compile Remove="MyFile.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Observer\" />
+  </ItemGroup>
 
 </Project>
