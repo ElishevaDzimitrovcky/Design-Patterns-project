@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dpProject;
+namespace dpProject.Prototype;
 
-public abstract class Disk
+public abstract class Cloneable
 {
-    public abstract int Size();
+    public abstract void Clone(string name);
 }

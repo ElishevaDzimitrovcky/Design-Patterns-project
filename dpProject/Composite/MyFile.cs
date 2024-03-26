@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dpProject;
-public class Branch
+namespace dpProject.Composite;
+
+public class MyFile : Disk
 {
     public string Name { get; set; }
-    public MyFile myFile { get; set; }
-    public Folder folder { get; set; }
 
+    public override string Type()
+    {
+        return "file";
+    }
 }

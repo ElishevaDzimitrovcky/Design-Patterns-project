@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dpProject;
+namespace dpProject.Prototype;
 
-public class MyFile : Disk
+public class CreateBranch : Cloneable
 {
-    public string Name { get; set; }
-
-    public override bool Size()
+    public override void Clone(string n)
     {
-        
+        new Branch(n);
     }
 }
