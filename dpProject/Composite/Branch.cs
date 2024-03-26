@@ -4,16 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using dpProject.Composite;
+using dpProject.Observer;
 
 namespace dpProject;
-public class Branch
+public class Branch : IState
 {
     public string Name { get; set; }
+    List<Disk> disks { get; set; }
+    List<IObserver> _observers = new List<IObserver>();
+    public void Attach(IObserver observer)
+    {
+        Console.WriteLine("Attached an observer.");
+        _observers.Add(observer);
+    }
+    public void Detach(IObserver observer)
+    {
+        _observers.Remove(observer);
+        Console.WriteLine("Detached an observer.");
+    }
+    public void Notify()
+    {
+        Console.WriteLine("Notifying observers...");
+        foreach (var observer in _observers)
+        {
+            observer.Update(this);
+        }
+    }
     List<Item> items { get; set; }
     public Branch(string name)
     {
         Name = name;
     }
+    public Branch()
+    {
+        
+    }
+    public void Add(Disk disk)
     public void Add(Item item)
     {
         items.Add(item);
@@ -40,6 +66,9 @@ public class Branch
     }
     public string Review()
     {
+        this.Notify();
         return "request a review.";
+
     }
+   
 }
