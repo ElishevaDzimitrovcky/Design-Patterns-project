@@ -1,4 +1,3 @@
-﻿using dpProject.state;
+﻿using dpProject.Memento;
+using dpProject.state;
 
-Tasks t = new Tasks();
-t.StartTask();

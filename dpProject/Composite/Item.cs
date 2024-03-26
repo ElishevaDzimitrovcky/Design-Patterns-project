@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace dpProject;
 
-public abstract class Disk
+public abstract class Item
 {
     public abstract string Type();
 }

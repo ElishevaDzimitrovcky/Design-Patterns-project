@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -12,10 +12,6 @@
     <Compile Remove="Disk.cs" />
     <Compile Remove="Folder.cs" />
     <Compile Remove="MyFile.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Observer\" />
   </ItemGroup>
 
 </Project>

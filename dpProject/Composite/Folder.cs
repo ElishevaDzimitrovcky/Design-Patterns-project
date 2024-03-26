@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace dpProject;
 
-public class Folder : Disk
+public class Folder : Item
 {
-    private List<Disk> disks = new List<Disk>();
-    public void add(Disk disk)
+    private List<Item> items = new List<Item>();
+    public void add(Item item)
     {
-        disks.Add(disk);
+        items.Add(item);
     }
     public override string Type()
     {

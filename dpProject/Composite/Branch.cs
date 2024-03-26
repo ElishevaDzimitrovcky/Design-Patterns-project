@@ -9,14 +9,14 @@ namespace dpProject;
 public class Branch
 {
     public string Name { get; set; }
-    List<Disk> disks { get; set; }
+    List<Item> items { get; set; }
     public Branch(string name)
     {
         Name = name;
     }
-    public void Add(Disk disk)
+    public void Add(Item item)
     {
-        disks.Add(disk);
+        items.Add(item);
     }
     public string Merge()
     {

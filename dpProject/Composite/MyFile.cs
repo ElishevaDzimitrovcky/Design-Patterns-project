@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace dpProject.Composite;
 
-public class MyFile : Disk
+public class MyFile : Item
 {
     public string Name { get; set; }
 
