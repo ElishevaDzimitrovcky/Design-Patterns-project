@@ -10,6 +10,14 @@ public class Branch
 {
     public string Name { get; set; }
     List<Disk> disks { get; set; }
+    public Branch(string name)
+    {
+        Name = name;
+    }
+    public void Add(Disk disk)
+    {
+        disks.Add(disk);
+    }
     public string Merge()
     {
         return "you merged the branches.";
