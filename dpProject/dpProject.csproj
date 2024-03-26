@@ -14,8 +14,4 @@
     <Compile Remove="MyFile.cs" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Observer\" />
-  </ItemGroup>
-
 </Project>

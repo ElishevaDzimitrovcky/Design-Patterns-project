@@ -1,4 +1,9 @@
-﻿using dpProject.state;
+﻿using dpProject;
+using dpProject.Observer;
+using dpProject.state;
 
-Tasks t = new Tasks();
-t.StartTask();
+var branch = new Branch();
+var o1 = new Collaborators();
+o1.Update(branch);
+branch.Attach(o1);
+
