@@ -7,8 +7,5 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Observer\" />
-  </ItemGroup>
 
 </Project>
