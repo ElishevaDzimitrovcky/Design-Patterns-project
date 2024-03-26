@@ -8,5 +8,5 @@ namespace dpProject;
 
 public abstract class Disk
 {
-    public abstract int Size();
+    public abstract string Type();
 }

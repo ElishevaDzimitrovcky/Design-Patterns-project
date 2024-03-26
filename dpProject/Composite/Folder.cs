@@ -13,7 +13,8 @@ public class Folder : Disk
     {
         disks.Add(disk);
     }
-    public override int Size()
+    public override string Type()
     {
+        return "folder";
     }
 }
