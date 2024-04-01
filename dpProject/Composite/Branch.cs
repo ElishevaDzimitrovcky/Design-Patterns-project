@@ -10,7 +10,6 @@ namespace dpProject;
 public class Branch : IState
 {
     public string Name { get; set; }
-    List<Disk> disks { get; set; }
     List<IObserver> _observers = new List<IObserver>();
     public void Attach(IObserver observer)
     {
@@ -39,7 +38,6 @@ public class Branch : IState
     {
         
     }
-    public void Add(Disk disk)
     public void Add(Item item)
     {
         items.Add(item);
