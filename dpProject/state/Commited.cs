@@ -17,9 +17,9 @@ public class Commited : ITask
         Console.WriteLine("start commit task");
     }
 
-    public void ChangeTask(Tasks task)
+    public void ChangeTask(ITask task)
     {
-        task.SetTask(new UnderReview());
+        task = new UnderReview();
     }
 
     public string CommitedTask()

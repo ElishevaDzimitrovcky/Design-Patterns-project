@@ -17,9 +17,9 @@ public class Staged : ITask
         Console.WriteLine("start stage task");
     }
 
-    public void ChangeTask(Tasks task)
+    public void ChangeTask(ITask task)
     {
-        task.SetTask(new Commited());
+        task = new Commited();
     }
 
     public string StagedTask()

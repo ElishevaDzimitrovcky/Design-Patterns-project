@@ -17,9 +17,9 @@ public class UnderReview : ITask
         Console.WriteLine("start under review task");
     }
 
-    public void ChangeTask(Tasks task)
+    public void ChangeTask(ITask task)
     {
-        task.SetTask(new ReadyToMerge());
+        task = new ReadyToMerge();
     }
 
     public string UnderReviewTask()

@@ -5,12 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using dpProject.Composite;
 using dpProject.Observer;
+using dpProject.state;
 
 namespace dpProject;
-public class Branch : IState
+public class Branch :Item , IState
 {
     public string Name { get; set; }
-    List<Disk> disks { get; set; }
+    public ITask State { get; set; } = new Draft();
+    List<Item> items { get; set; }
+
     List<IObserver> _observers = new List<IObserver>();
     public void Attach(IObserver observer)
     {
@@ -30,7 +33,6 @@ public class Branch : IState
             observer.Update(this);
         }
     }
-    List<Item> items { get; set; }
     public Branch(string name)
     {
         Name = name;
@@ -39,10 +41,9 @@ public class Branch : IState
     {
         
     }
-    public void Add(Disk disk)
     public void Add(Item item)
     {
-        items.Add(item);
+        items?.Add(item);
     }
     public string Merge()
     {
@@ -50,14 +51,23 @@ public class Branch : IState
     }
     public string Commit()
     {
+        if(State.GetType() != typeof(Staged))
+        {
+            return "Can't commit, try to run 'commit'";
+        }
+        State.ChangeTask(State);
         return "you commited.";
     }
-    public string Delete()
+    public string Delete(Item item)
     {
+        items.Remove(item);
         return "you deleted a branch.";
     }
     public string Create()
     {
+        Console.WriteLine("Enter a branch name:");
+        string name = Console.ReadLine();
+        items.Add(new Branch(name));
         return "you created a branch.";
     }
     public string Undo()
@@ -66,9 +76,12 @@ public class Branch : IState
     }
     public string Review()
     {
-        this.Notify();
+        Notify();
         return "request a review.";
-
     }
-   
+
+    public override string Type()
+    {
+        return "Branch";
+    }
 }

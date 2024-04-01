@@ -15,7 +15,7 @@ public class CurrentMemento : IMemento
     }
     public string GetBranchName()
     {
-        return $"{state.Substring(0, 9)}";
+        return state;
     }
 
     public string GetBranchState()

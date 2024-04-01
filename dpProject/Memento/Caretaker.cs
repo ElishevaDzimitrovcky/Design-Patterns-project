@@ -9,15 +9,15 @@ namespace dpProject.Memento;
 public class Caretaker
 {
     private List<IMemento> mementoList = new List<IMemento>();
-    private Originator origininator = null;
+    private Originator originator = null;
     public Caretaker(Originator originator)
     {
-        this.origininator = originator;
+        this.originator = originator;
     }
     public void Backup()
     {
         Console.WriteLine("Saving Originator's state.");
-        this.mementoList.Add(this.origininator.Save());
+        mementoList.Add(originator.Save());
     }
     public void Undo()
     {

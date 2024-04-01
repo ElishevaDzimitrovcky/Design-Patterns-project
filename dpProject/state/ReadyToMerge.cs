@@ -17,9 +17,9 @@ public class ReadyToMerge : ITask
         Console.WriteLine("start ready to merge task");
     }
 
-    public void ChangeTask(Tasks task)
+    public void ChangeTask(ITask task)
     {
-        task.SetTask(new Merged());
+        task = new Merged();
     }
 
     public string ReadyToMergeTask()

@@ -10,5 +10,6 @@ public interface ITask
 {
     public string GetTask();
     public void StartTask();
-    public void ChangeTask(Tasks task);
+    public void ChangeTask(ITask task);
+
 }

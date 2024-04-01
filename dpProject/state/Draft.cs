@@ -17,9 +17,9 @@ public class Draft : ITask
         Console.WriteLine("start draft task");
     }
 
-    public void ChangeTask(Tasks task)
+    public void ChangeTask(ITask task)
     {
-        task.SetTask(new Staged());
+        task =  new Staged();
     }
 
     public string DraftTask()

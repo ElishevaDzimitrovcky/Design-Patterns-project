@@ -17,9 +17,9 @@ public class Merged : ITask
         Console.WriteLine("start merge task");
     }
 
-    public void ChangeTask(Tasks task)
+    public void ChangeTask(ITask task)
     {
-        task.SetTask(new Staged());
+        task = new Staged();
     }
 
     public string MergedTask()
